@@ -37,7 +37,7 @@ class PontoSeeder extends Seeder
                         'ano' => $ano,
                         'hora' => $hora,
                         'minutos' => $minutos,
-                        'pis' => $pis,
+                        'pis_id' => $pis,
                         'chave' => $chave,
                     ]);
                 }

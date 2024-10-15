@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('ano');
             $table->integer('hora');
             $table->integer('minutos');
-            $table->string('pis', 11);
+            $table->string('pis_id', 11);
             $table->string('chave', 5);
             $table->timestamps();
         });

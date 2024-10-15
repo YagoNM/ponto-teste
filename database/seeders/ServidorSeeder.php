@@ -17,7 +17,7 @@ class ServidorSeeder extends Seeder
         DB::transaction(function () {
             Servidor::insert([
                 ['pis' => '01238796011', 'nome' => 'Osvaldo Teodoro Alves'],
-                ['pis' => '000', 'nome' => 'Rogério Fernandes Navarro']
+                ['pis' => '01243918101', 'nome' => 'Rogério Fernandes Navarro']
             ]);
         });
     }

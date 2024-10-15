@@ -15,4 +15,9 @@ class Servidor extends Model
         'pis',
         'nome',
     ];
+
+    public function relatorios()
+    {
+        return $this->hasMany(Relatorio::class, 'pis_id', 'pis');
+    }
 }
