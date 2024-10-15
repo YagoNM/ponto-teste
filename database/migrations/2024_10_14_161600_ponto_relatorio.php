@@ -19,7 +19,10 @@ return new class extends Migration
             $table->integer('ano');
             $table->integer('hora');
             $table->integer('minutos');
+
             $table->string('pis_id', 11);
+            $table->foreign('pis_id')->references('pis')->on('servidores')->onDelete('cascade');
+
             $table->string('chave', 5);
             $table->timestamps();
         });
