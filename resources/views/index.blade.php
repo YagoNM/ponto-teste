@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite('resources/css/index.css')
     <title>Arquivo de Ponto</title>
 </head>
 
@@ -28,11 +29,12 @@
 
     <form action="{{ route('ponto.upload.handle') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div>
-            <label for="ponto_file">Selecione o arquivo de ponto (.txt):</label>
+        <div class="search">
+            <label for="ponto_file">Selecione o arquivo (.txt):</label>
             <input type="file" name="ponto_file" id="ponto_file" required>
+            <button type="submit">Enviar</button>
         </div>
-        <button type="submit">Enviar</button>
+        
     </form>
 </body>
 
