@@ -9,7 +9,13 @@
 </head>
 
 <body>
-    <h1>Enviar o Arquivo de Ponto</h1>
+    <header>
+        <div class="text-container">
+            <h1>ESPELHO DE PONTO</h1>
+        </div>
+    </header>
+
+    <h2>Enviar o Arquivo de Ponto</h2>
 
     @if (session('success'))
     <div style="color: green;">

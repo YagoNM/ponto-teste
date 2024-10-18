@@ -1,3 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 40px 0;
+    text-align: center;
+    color: white;
+}
+
+header .text-container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header .text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -6,10 +34,11 @@ body {
     padding: 0;
 }
 
-h1 {
+h2 {
     text-align: center;
     margin-top: 30px;
     color: #4CAF50;
+    margin-bottom: 10px;
 }
 
 .container {
@@ -35,13 +64,8 @@ label {
 div {
     display: flex;
     flex-direction: column;
-    /* Alinha os itens verticalmente */
     align-items: center;
-    /* Centraliza horizontalmente */
     justify-content: center;
-    /* Centraliza verticalmente */
-    margin-bottom: 20px;
-    /* Adiciona espaçamento entre as divs */
 }
 
 input[type="file"] {
