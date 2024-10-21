@@ -8,3 +8,4 @@ Route::get('/', [MainController::class, 'main'])->name('main');
 Route::post('/upload-ponto', [MainController::class, 'handleUpload'])->name('ponto.upload.handle');
 
 Route::get('/menu', [MenuController::class, 'menu'])->name('menu');
+Route::get('/get-servidor', [MenuController::class, 'getServidor'])->name('getServidor');
