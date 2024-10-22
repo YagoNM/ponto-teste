@@ -7,13 +7,24 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    public function menu() 
+    public function menu()
     {
         return view('menu');
     }
 
     public function getServidor(Request $request)
     {
-        return response()->json(['message' => 'API funcionando corretamente']);
+        // Valida a entrada
+        $request->validate([
+            'search' => 'required|string',
+        ]);
+
+        // Busca servidores pelo nome (ajustar conforme seu banco de dados)
+        $servidores = Servidor::where('nome', 'like', '%' . $request->search . '%')
+            ->select('nome', 'pis')
+            ->get();
+
+        // Retorna a resposta em JSON
+        return response()->json(['usuario' => $servidores]);
     }
 }
