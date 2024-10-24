@@ -130,7 +130,7 @@ header .text-container {
 }
 
 .table thead th {
-    background-color: #f2f2f2;
+    background-color: #4CAF50;
     border-bottom: 2px solid #ddd;
     padding: 8px 10px; /* Diminuir o espaçamento */
     text-align: center;
@@ -145,7 +145,7 @@ header .text-container {
 
 /* Adiciona alternância de cor nas linhas */
 .table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #9d8;
 }
 
 .table tbody tr:nth-child(odd) {
