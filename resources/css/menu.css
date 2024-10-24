@@ -122,23 +122,23 @@ header .text-container {
 
 /* Estilo para a tabela do espelho de ponto */
 .table {
-    width: 100%;
+    width: 70%; /* Diminuir a largura da tabela */
     border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 16px;
+    margin: 20px auto;
+    font-size: 14px; /* Reduzir o tamanho da fonte */
     text-align: left;
 }
 
 .table thead th {
     background-color: #f2f2f2;
     border-bottom: 2px solid #ddd;
-    padding: 12px 15px;
+    padding: 8px 10px; /* Diminuir o espaçamento */
     text-align: center;
 }
 
 .table tbody td {
     border-bottom: 1px solid #ddd;
-    padding: 10px 15px;
+    padding: 8px 10px; /* Diminuir o espaçamento */
     text-align: center;
     font-family: Arial, sans-serif;
 }
@@ -155,7 +155,9 @@ header .text-container {
 .table tbody td:first-child {
     font-weight: bold;
     color: #333;
-    text-align: left;
+    text-align: justify;
+    width: 130px; /* Ajuste a largura da coluna "Dia" */
+    white-space: nowrap;
 }
 
 .table tbody td:last-child {
@@ -179,12 +181,16 @@ thead th {
 }
 
 .servidor-info h3 {
+    display: flex;
+    justify-content: center;
     margin: 0;
     color: #333;
     font-weight: bold;
 }
 
 .servidor-info p {
+    display: flex;
+    justify-content: center;
     margin: 5px 0;
     font-size: 16px;
     color: #666;
