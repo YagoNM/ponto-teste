@@ -34,26 +34,34 @@ class MainController extends Controller
         if (file_exists($filePath)) {
             $file = fopen($filePath, 'r');
             if ($file) {
-                while (($line = fgets($file)) !== false) {
-                    $tipo_id = substr($line, 0, 10);
-                    $dia = (int)substr($line, 10, 2);
-                    $mes = (int)substr($line, 12, 2);
-                    $ano = (int)substr($line, 14, 4);
-                    $hora = (int)substr($line, 18, 2);
-                    $minutos = (int)substr($line, 20, 2);
-                    $pis = substr($line, 22, 11);
-                    $chave = substr($line, 33, 5);
+                // Define o padrão para 36 dígitos seguidos de 2 caracteres alfanuméricos
+                $pattern = '/^\d{36}[a-zA-Z0-9]{2}$/';
 
-                    DB::table('ponto_relatorio')->insert([
-                        'tipo_id' => $tipo_id,
-                        'dia' => $dia,
-                        'mes' => $mes,
-                        'ano' => $ano,
-                        'hora' => $hora,
-                        'minutos' => $minutos,
-                        'pis_id' => $pis,
-                        'chave' => $chave,
-                    ]);
+                while (($line = fgets($file)) !== false) {
+                    $line = trim($line); // Remove espaços em branco extras
+
+                    // Verifica se a linha corresponde ao padrão
+                    if (preg_match($pattern, $line)) {
+                        $tipo_id = substr($line, 0, 10);
+                        $dia = (int)substr($line, 10, 2);
+                        $mes = (int)substr($line, 12, 2);
+                        $ano = (int)substr($line, 14, 4);
+                        $hora = (int)substr($line, 18, 2);
+                        $minutos = (int)substr($line, 20, 2);
+                        $pis = substr($line, 22, 12);
+                        $chave = substr($line, 34, 4);
+
+                        DB::table('ponto_relatorio')->insert([
+                            'tipo_id' => $tipo_id,
+                            'dia' => $dia,
+                            'mes' => $mes,
+                            'ano' => $ano,
+                            'hora' => $hora,
+                            'minutos' => $minutos,
+                            'pis_id' => $pis,
+                            'chave' => $chave,
+                        ]);
+                    }
                 }
                 fclose($file);
             }
